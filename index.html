@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sabil Murti — AI Integrator & Full Stack Developer from Jakarta. Building Pormulir, an AI-powered form builder SaaS." />
+  <title>Sabil Murti — AI Integrator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div id="cursor"></div>
+
+  <!-- Three.js Roots Canvas -->
+  <canvas id="roots-canvas" aria-hidden="true"></canvas>
+
+  <!-- ===================== NAV ===================== -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <span class="nav-logo">SM</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#arsenal">Arsenal</a></li>
+        <li><a href="#grimoire">Grimoire</a></li>
+        <li><a href="#contact">Reach Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1 class="hero-name">SABIL MURTI</h1>
+      <p class="hero-sub">AI Integrator · Full Stack Developer</p>
+      <p class="hero-tagline">Turning caffeine into elegant AI solutions.</p>
+      <div class="hero-cta">
+        <a href="#grimoire" class="btn-ghost">View Projects</a>
+        <a href="#contact" class="btn-ghost">Contact Me</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about">
+    <div class="section-inner section-reveal">
+      <span class="section-label">// about</span>
+      <div class="about-grid">
+        <div class="about-text">
+          <blockquote class="about-quote">
+            "I don't just write code.<br/>I architect systems that breathe."
+          </blockquote>
+          <p class="about-body">
+            A developer from Jakarta who builds systems with precision and obsession.
+            Currently working on <a href="https://pormulir.my.id" target="_blank" rel="noopener">Pormulir</a> — an AI-powered form builder SaaS.
+          </p>
+          <ul class="about-facts">
+            <li><span class="fact-key">Based</span><span class="fact-arrow">→</span><span class="fact-val">Indonesia</span></li>
+            <li><span class="fact-key">Focus</span><span class="fact-arrow">→</span><span class="fact-val">AI Integration & Full Stack</span></li>
+            <li><span class="fact-key">Status</span><span class="fact-arrow">→</span><span class="fact-val">Open to Freelance & Remote</span></li>
+          </ul>
+        </div>
+        <div class="about-deco" aria-hidden="true">
+          <!-- Dead rose line art SVG -->
+          <svg viewBox="0 0 200 340" fill="none" xmlns="http://www.w3.org/2000/svg" class="rose-svg">
+            <!-- Stem -->
+            <path d="M 100,320 C 98,280 102,240 99,200 C 97,165 101,130 98,90" stroke="#f0ede8" stroke-width="1.2" stroke-linecap="round"/>
+            <!-- Thorns on stem -->
+            <path d="M 99,260 C 85,252 78,242 72,248" stroke="#f0ede8" stroke-width="1" stroke-linecap="round"/>
+            <path d="M 100,200 C 114,192 122,182 128,188" stroke="#f0ede8" stroke-width="1" stroke-linecap="round"/>
+            <path d="M 99,150 C 86,142 78,132 74,138" stroke="#f0ede8" stroke-width="1" stroke-linecap="round"/>
+            <!-- Drooping petals — wilted rose -->
+            <path d="M 98,90 C 88,70 72,62 68,45 C 65,32 75,22 85,28 C 92,32 95,45 98,55" stroke="#f0ede8" stroke-width="1.1" stroke-linecap="round"/>
+            <path d="M 98,90 C 108,70 124,62 128,45 C 131,32 121,22 111,28 C 104,32 101,45 98,55" stroke="#f0ede8" stroke-width="1.1" stroke-linecap="round"/>
+            <path d="M 98,90 C 80,82 65,75 58,60 C 52,48 60,36 70,40 C 80,44 88,58 94,68" stroke="#f0ede8" stroke-width="1.1" stroke-linecap="round"/>
+            <path d="M 98,90 C 116,82 131,75 138,60 C 144,48 136,36 126,40 C 116,44 108,58 102,68" stroke="#f0ede8" stroke-width="1.1" stroke-linecap="round"/>
+            <!-- Center of rose -->
+            <ellipse cx="98" cy="78" rx="10" ry="8" stroke="#f0ede8" stroke-width="1" fill="none"/>
+            <!-- Drooping leaf -->
+            <path d="M 99,170 C 72,155 58,140 62,120 C 66,105 82,108 90,125 C 95,138 97,155 99,170" stroke="#f0ede8" stroke-width="1" stroke-linecap="round"/>
+            <path d="M 75,135 L 99,170" stroke="#f0ede8" stroke-width="0.6" stroke-linecap="round"/>
+            <!-- Second leaf -->
+            <path d="M 100,230 C 126,215 140,200 136,180 C 132,165 116,168 108,185 C 103,198 101,215 100,230" stroke="#f0ede8" stroke-width="1" stroke-linecap="round"/>
+            <path d="M 125,192 L 100,230" stroke="#f0ede8" stroke-width="0.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ARSENAL ===================== -->
+  <section id="arsenal">
+    <div class="section-inner section-reveal">
+      <span class="section-label">// arsenal</span>
+      <div class="skills-grid">
+
+        <div class="skill-group">
+          <span class="skill-category">Frontend</span>
+          <div class="skill-tags">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Svelte</span>
+            <span class="skill-tag">TailwindCSS</span>
+            <span class="skill-tag">React Native</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-category">Backend</span>
+          <div class="skill-tags">
+            <span class="skill-tag">Laravel</span>
+            <span class="skill-tag">PHP</span>
+            <span class="skill-tag">Node.js</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-category">Database</span>
+          <div class="skill-tags">
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-category">DevTools</span>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">Vite</span>
+            <span class="skill-tag">GSAP</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-category">Game Dev</span>
+          <div class="skill-tags">
+            <span class="skill-tag">Godot</span>
+            <span class="skill-tag">GDScript</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-category">AI & Agents</span>
+          <div class="skill-tags">
+            <span class="skill-tag">AI Integration</span>
+            <span class="skill-tag">LLM Orchestration</span>
+            <span class="skill-tag">MCP</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GRIMOIRE ===================== -->
+  <section id="grimoire">
+    <div class="section-inner section-reveal">
+      <span class="section-label">// grimoire</span>
+      <p class="section-sub">Selected works.</p>
+
+      <div class="projects-list">
+
+        <article class="project-item" id="proj-01">
+          <div class="project-num">01</div>
+          <div class="project-body">
+            <h3 class="project-name">Pormulir</h3>
+            <p class="project-desc">AI-powered dynamic form builder SaaS. Generates intelligent, responsive forms instantly using AI.</p>
+            <div class="project-meta">
+              <span class="project-stack">React · Laravel · MySQL · TailwindCSS</span>
+              <a href="https://pormulir.my.id" target="_blank" rel="noopener" class="project-link">pormulir.my.id →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-item" id="proj-02">
+          <div class="project-num">02</div>
+          <div class="project-body">
+            <h3 class="project-name">Klore-Noir</h3>
+            <p class="project-desc">Open-source AI codebase-to-template engine. Converts any codebase into a reusable template in seconds.</p>
+            <div class="project-meta">
+              <span class="project-stack">Node.js · AI APIs</span>
+              <span class="project-link muted">Open Source</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-item" id="proj-03">
+          <div class="project-num">03</div>
+          <div class="project-body">
+            <h3 class="project-name">mitrax9.com</h3>
+            <p class="project-desc">Commercial website project. Clean, responsive, and delivered on time.</p>
+            <div class="project-meta">
+              <span class="project-stack">PHP · HTML · CSS</span>
+              <span class="project-link muted">Commercial</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact">
+    <div class="section-inner section-reveal">
+      <span class="section-label">// reach me</span>
+      <h2 class="contact-headline">Let's build something<br/><em>haunting.</em></h2>
+      <div class="contact-links">
+        <a href="https://github.com/murtix" target="_blank" rel="noopener" class="contact-link">
+          GitHub <span class="link-arrow">→</span>
+        </a>
+        <a href="mailto:sabil@example.com" class="contact-link">
+          Email <span class="link-arrow">→</span>
+        </a>
+      </div>
+      <footer>
+        <p>© 2026 Sabil Murti · Built with obsession.</p>
+      </footer>
+    </div>
+  </section>
+
+  <!-- ===================== DEBUG PANEL ===================== -->
+  <div id="debug-panel">
+    <span class="debug-title">// Root Grimoire Control</span>
+    <div class="debug-row">
+      <label>Seed:</label>
+      <input type="number" id="debug-seed" value="64673492" />
+    </div>
+    <div class="debug-row">
+      <label>Radius:</label>
+      <input type="range" id="debug-radius" min="2.0" max="6.0" step="0.1" value="3.8" />
+    </div>
+    <div class="debug-actions">
+      <button id="btn-randomize">Randomize</button>
+      <button id="btn-copy">Copy Seed</button>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
