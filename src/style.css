@@ -80,6 +80,7 @@ img, svg {
 
 /* ============ NAV ============ */
 #main-nav {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -170,26 +171,63 @@ section {
 
 /* ============ HERO ============ */
 #hero {
-  height: 100vh;
-  min-height: 600px;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   padding: 0 max(2rem, 5vw);
   position: relative;
+  overflow: hidden;
 }
 
 .hero-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
+  max-width: var(--max-width);
+  width: 100%;
   position: relative;
   z-index: 3;
+}
+
+.hero-text {
+  flex: 1;
+  text-align: left;
+}
+
+.hero-avatar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-avatar img {
+  width: 100%;
+  max-width: 420px;
+  height: 420px;
+  aspect-ratio: 1/1;
+  border-radius: 50%; /* Revert to circle */
+  object-fit: cover;
+  border: 1px solid rgba(139, 0, 0, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(139, 0, 0, 0.15);
+  transition: all 0.5s ease;
+  filter: grayscale(40%) contrast(1.1);
+}
+
+.hero-avatar:hover img {
+  filter: grayscale(0%) contrast(1);
+  border-color: var(--blood);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(139, 0, 0, 0.4);
+  transform: scale(1.02);
 }
 
 .hero-name {
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: clamp(4rem, 12vw, 11.5rem);
+  font-size: clamp(3.5rem, 8vw, 7rem);
   line-height: 0.92;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -197,19 +235,19 @@ section {
   /* chars will be split by JS */
 }
 
-.hero-name span {
-  display: inline-block;
-  will-change: transform, opacity;
-}
-
 .hero-sub {
-  font-family: var(--font-serif);
-  font-style: italic;
+  font-family: var(--font-body);
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   color: var(--muted-light);
-  letter-spacing: 0.04em;
-  margin-bottom: 1rem;
-  opacity: 0;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .hero-tagline {
@@ -219,10 +257,6 @@ section {
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 3rem;
-  opacity: 0;
-}
-
-.hero-cta {
   display: flex;
   gap: 1.2rem;
   justify-content: center;
@@ -692,30 +726,78 @@ section {
 
 .contact-links {
   display: flex;
-  justify-content: center;
   gap: 3rem;
+  margin-top: 3rem;
   margin-bottom: 5rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
-
 .contact-link {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
-  color: var(--muted-light);
+  text-decoration: none;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0;
+  background: transparent;
+  border: none;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  transition: color 0.3s;
+  justify-content: flex-start;
+  transition: all 0.4s ease;
+  position: relative;
+  width: max-content;
 }
 
+.contact-link::before {
+  content: '✦';
+  color: var(--blood);
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  opacity: 0.5;
+  transition: all 0.4s ease;
+}
+/* ============ CONTACT HOVER EFFECTS ============ */
+/* Need to pull contact styles out of the middle of responsive overrides */
 .contact-link:hover {
-  color: var(--text);
+  color: var(--white);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  transform: translateX(10px);
 }
 
+.contact-link:hover::before {
+  opacity: 1;
+  text-shadow: 0 0 10px var(--blood);
+  transform: rotate(180deg);
+}
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+
+  .hero-content {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-cta {
+    justify-content: center;
+  }
+
+  .hero-avatar img {
+    max-width: 250px;
+    height: 250px;
+  }
+}
 .link-arrow {
   display: inline-block;
-  transition: transform 0.3s;
+  margin-left: 1rem;
+  transition: transform 0.4s ease;
 }
 
 .contact-link:hover .link-arrow {
