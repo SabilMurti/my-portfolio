@@ -165,3 +165,79 @@ document.querySelectorAll('.contact-link').forEach((link) => {
     gsap.to(arrow, { x: 0, duration: 0.3, ease: 'power2.out' })
   })
 })
+
+// ==========================================
+// 1. HORIZONTAL SLIDE (Dengan Delay/Jeda Baca)
+// ==========================================
+const track = document.getElementById('horizontal-track');
+
+// Kita pin track lebih lama dari jarak slidenya (durasi scroll diperpanjang)
+// Total pin = 3 viewport height. 
+// - 1 viewport pertama: Diam (baca About)
+// - 1 viewport kedua: Geser (slide ke Arsenal)
+// - 1 viewport ketiga: Diam (baca Arsenal)
+const slideTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: track,
+    pin: true,
+    scrub: 1.5, // Sedikit lebih smooth
+    start: 'top top',
+    end: () => '+=' + (window.innerHeight * 3), 
+    invalidateOnRefresh: true
+  }
+});
+
+// Delay 1: Diam di About
+slideTl.to(track, { x: 0, duration: 1, ease: 'none' }); 
+// Slide 2: Geser ke Arsenal
+slideTl.to(track, { x: () => -window.innerWidth, duration: 1, ease: 'power2.inOut' });
+// Delay 3: Diam di Arsenal
+slideTl.to(track, { x: () => -window.innerWidth, duration: 1, ease: 'none' });
+
+// Hero content pudar saat track naik
+gsap.to('#hero .hero-content', {
+  opacity: 0,
+  y: -50,
+  ease: 'none',
+  scrollTrigger: {
+    trigger: track,
+    start: 'top 80%',
+    end: 'top top',
+    scrub: true
+  }
+});
+
+
+// ==========================================
+// 2. PROJECTS REVEAL (Elegant Fade & Slide, No Stacking)
+// ==========================================
+const cards = gsap.utils.toArray('.project-item');
+
+cards.forEach((card, i) => {
+  gsap.fromTo(card, 
+    { opacity: 0, y: 50 },
+    {
+      opacity: 1, 
+      y: 0,
+      duration: 1.2,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 85%', // starts appearing when top of card hits 85% down viewport
+        toggleActions: 'play none none reverse'
+      }
+    }
+  );
+});
+
+// Section Parallax background for extra elegance
+gsap.to('#roots-canvas', {
+  y: 150, // Move canvas down slightly as you scroll to create parallax depth
+  ease: 'none',
+  scrollTrigger: {
+    trigger: document.body,
+    start: 'top top',
+    end: 'bottom bottom',
+    scrub: true
+  }
+});

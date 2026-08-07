@@ -1026,3 +1026,57 @@ footer {
 ::-webkit-scrollbar-thumb {
   background: rgba(240, 237, 232, 0.1);
 }
+
+/* === HORIZONTAL WRAPPER === */
+#horizontal-track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 200vw; /* About + Arsenal */
+  position: relative;
+  z-index: 2;
+}
+
+.h-panel {
+  width: 100vw;
+  min-height: 100vh;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center; /* Center vertikal */
+}
+.h-panel .section-inner { width: 100%; }
+
+/* Biar canvas roots tetep di belakang */
+#roots-canvas { z-index: 0; }
+
+
+/* Remove vertical padding from section-inner when inside horizontal panel so it truly centers */
+.h-panel .section-inner {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Cancel out the sticky cards - return to elegant normal flow */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 4rem; /* normal spacing */
+  padding-bottom: 4rem;
+}
+
+.project-item {
+  position: relative; /* NO STICKY */
+  padding: 3rem 0 !important; /* normal padding */
+  background: transparent !important; /* completely transparent */
+  backdrop-filter: none !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(240, 237, 232, 0.08) !important;
+  border-radius: 0 !important; /* NO ROUNDED */
+  margin-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+.project-item:hover {
+  border-left: 2px solid var(--blood) !important;
+  padding-left: 1rem !important;
+}
